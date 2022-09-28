@@ -1,4 +1,5 @@
 import 'package:easy_projects/data/projects_data.dart';
+import 'package:easy_projects/screens/about_screen.dart';
 import 'package:easy_projects/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,17 @@ class _LoginScreenState extends State<LoginScreen> {
       key: _formKey,
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AboutScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.info),
+          ),
           title: const Text('easyProjects'),
         ),
         body: Center(

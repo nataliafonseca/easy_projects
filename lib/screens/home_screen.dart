@@ -1,4 +1,5 @@
 import 'package:easy_projects/data/projects_data.dart';
+import 'package:easy_projects/screens/about_screen.dart';
 import 'package:easy_projects/screens/form_screen.dart';
 import 'package:easy_projects/screens/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AboutScreen(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.info),
+        ),
         title: const Text('Meus Projetos'),
         actions: [
           IconButton(
@@ -27,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             icon: const Icon(Icons.logout),
-          )
+          ),
         ],
       ),
       body: ListView(
